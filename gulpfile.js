@@ -69,7 +69,13 @@ gulp.task('build', ['html', 'browserify'], function() {
   return merge(html,js);
 });
 
-gulp.task('default', ['html', 'browserify'], function() {
+gulp.task('source', function() {
+  return gulp.src('data/*')
+      .on('error', interceptErrors)
+      .pipe(gulp.dest('./build/data'));
+});
+
+gulp.task('default', ['html', 'browserify', 'source'], function() {
 
   browserSync.init(['./build/**/**.**'], {
     server: "./build",
