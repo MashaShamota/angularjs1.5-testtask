@@ -8,3 +8,10 @@
 3. `gulp`
 
 Make sure you have gulp installed globally (`npm install -g gulp`)
+
+# What should be improved
+
+1. unit-tests
+2. e2e tests
+3. use cache for storing data
+4. proper error handling
