@@ -1,0 +1,18 @@
+<div class="post-page">
+  <!-- Main view. Contains post html -->
+  <div class="container page">
+    <div class="row post-content">
+        <div class="col-md-3">
+             <!-- Sidebar where categories are listed -->
+            <post-categories></post-categories>
+        </div>
+      <div class="col-md-9">
+        <h1 ng-bind="$ctrl.post.title"></h1>
+        <hr />
+        <img class="img-fluid" ng-src="{{$ctrl.post.image_url}}" /> 
+        <div ng-bind-html="$ctrl.post.body"></div>
+      </div>
+    </div>
+    
+  </div>
+</div>

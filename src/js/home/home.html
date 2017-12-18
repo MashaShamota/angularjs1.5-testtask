@@ -1,0 +1,31 @@
+<div class="container page mt-2">
+    <div class="row">
+        <div class="col-md-3">
+            <!-- Sidebar where categories are listed -->
+            <post-categories></post-categories>
+        </div>
+        <div class="col-md-9">
+            <h1 ng-if="$ctrl.category">{{$ctrl.category.title}} Archive</h1>
+            <h1 ng-if="!$ctrl.category">Featured Posts</h1>
+            <hr />
+            <!-- List the posts -->
+            <post-preview
+              post="post"
+              ng-repeat="post in $ctrl.list">
+            </post-preview>
+
+            <div class="post-preview"
+              ng-hide="!$ctrl.loading">
+              Loading posts...
+            </div>
+
+            <div class="post-preview"
+              ng-show="!$ctrl.loading && !$ctrl.list.length">
+              No posts are here... yet.
+              <a ui-sref="app.home">
+                  Go Home
+              </a>
+            </div>
+        </div>
+    </div>
+</div>
